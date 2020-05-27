@@ -1,0 +1,71 @@
+/* Inspired by https://codepo8.github.io/css-fork-on-github-ribbon/ */
+
+#jacquev6_ribbon p.jacquev6_ribbon_hidden {
+    display: none;
+}
+
+#jacquev6_ribbon p {
+    background: #2E457B;
+    font-family: sans-serif;
+    text-align: center;
+    font-weight: bold;
+    padding: 6px 0px;
+    font-size: 12px;
+    line-height: 16px;
+    position: relative;
+}
+
+#jacquev6_ribbon a {
+    color: #fff;
+    text-decoration: none;
+    outline: 0;
+}
+
+#jacquev6_ribbon a:hover {
+    color: #DFB562;
+}
+
+#jacquev6_ribbon a::before, #jacquev6_ribbon a::after {
+    content: "";
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 1px;
+    left: 0;
+    height: 2px;
+    background: #fff;
+}
+
+#jacquev6_ribbon a::after {
+    bottom: 1px;
+    top: auto;
+}
+
+@media screen and (min-width: 800px) {
+    .csstransforms #jacquev6_ribbon {
+        z-index: 9999;
+        position: absolute;
+        overflow: hidden;
+        width: 202px;
+        height: 202px;
+        top: 0;
+        right: 0;
+    }
+
+    .csstransforms #jacquev6_ribbon>div {
+        position: absolute;
+        /* Rotation is done around the center. We want to keep the center on the diagonal.
+        So, we must keep width / 2 + right == heigth / 2 + top */
+        width: 500px;
+        height: 100px;
+        top: 30px;
+        right: -170px;
+        transform: rotate(45deg);
+    }
+
+    .csstransforms #jacquev6_ribbon p.jacquev6_ribbon_hidden {
+        display: block;
+        background: rgba(0,0,0,0);
+        color: rgba(0,0,0,0);
+    }
+}
